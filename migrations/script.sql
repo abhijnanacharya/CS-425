@@ -1,14 +1,14 @@
 -- Create the initial table structure<boats>
 CREATE TABLE boats (
-    bid uuid DEFAULT uuid_generate_v4() NOT NULL,
+    bid serial PRIMARY KEY,
     bname character varying(20),
     fee integer,
-    location character varying,
-    PRIMARY KEY (bid)
+    location character varying
 );
+
 -- Create the initial table structure<sailors>
 CREATE TABLE sailors (
-    sid uuid DEFAULT uuid_generate_v4() NOT NULL,
+    sid serial,
     sname character varying(20),
     rating integer,
     age integer,
@@ -16,7 +16,7 @@ CREATE TABLE sailors (
 );
 -- Create the initial table structure<captain>
 CREATE TABLE captain (
-    sid integer,
+    sid serial PRIMARY KEY,
     sname character varying,
     rating integer,
     age integer,
@@ -25,8 +25,8 @@ CREATE TABLE captain (
 
 -- Create the initial table structure<reserves>
 CREATE TABLE reserves (
-    sid uuid,
-    bid uuid,
+    sid serial ,
+    bid serial ,
     day date,
     deposit integer,
     PRIMARY KEY (sid, bid)
