@@ -16,7 +16,7 @@ CREATE TABLE sailors (
 );
 -- Create the initial table structure<captain>
 CREATE TABLE captain (
-    sid serial PRIMARY KEY,
+    sid serial,
     sname character varying,
     rating integer,
     age integer,
